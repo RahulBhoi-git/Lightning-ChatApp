@@ -9,10 +9,14 @@ import { Server } from "socket.io";
 //Create Express app and HTTP server
 const app = express();
 const server = http.createServer(app);
-const allowedOrigins = (process.env.FRONTEND_URL || "http://localhost:5173")
-  .split(",")
-  .map((origin) => origin.trim())
-  .filter(Boolean);
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://lightning-chatapp-client.netlify.app",
+  ...(process.env.FRONTEND_URL || "")
+    .split(",")
+    .map((origin) => origin.trim())
+    .filter(Boolean),
+];
 const corsOptions = {
   origin: allowedOrigins,
 };
