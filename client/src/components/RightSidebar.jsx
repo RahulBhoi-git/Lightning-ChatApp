@@ -21,7 +21,7 @@ const RightSidebar = () => {
           />
           <h1 className="px-10 text-xl font-medium mx-auto flex items-center gap-2">
             {/* //onlineUsers */}
-            {onlineUsers.includes(selectedUser._id)&&
+            {onlineUsers?.includes(selectedUser._id)&&
             <p className="w-2 h-2 rounded-full bg-green-500"></p>}
             
             {selectedUser.fullName}
