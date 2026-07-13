@@ -1,0 +1,10 @@
+[build]
+  base = "client"
+  command = "npm run build"
+  publish = "dist"
+
+# Serve the Vite SPA for direct visits to client-side routes.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
